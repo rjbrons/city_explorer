@@ -4,6 +4,6 @@ Estimate of time needed to complete: 4 hours
 
 Start time: 8:45
 
-Finish time:
+Finish time: finished main bit @ 10:00 - working on refactoring with props.
 
 Actual time needed to complete:
