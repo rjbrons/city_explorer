@@ -8,14 +8,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      searchQuery: 'placeholder',
+      locationData: {}
+    };
   }
+
+  updateLocationData = newLoc => {
+    this.setState({ locationData: newLoc });
+  };
+
   render() {
     return (
       <>
         <Header />
-        <SearchForm />
-        <Map />
+        <SearchForm sendLoc={this.updateLocationData} />
+        <Map loc={this.state.locationData} />
         <SearchResults />
       </>
     );
