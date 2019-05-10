@@ -6,8 +6,7 @@ class SearchForm extends React.Component {
     super(props);
 
     this.state = {
-      searchQuery: 'I am Groot.',
-      location: {}
+      searchQuery: 'I am Groot.'
     };
   }
 
@@ -18,9 +17,9 @@ class SearchForm extends React.Component {
       this.state.searchQuery
     }`;
     let loc = await superagent.get(url);
-    await this.setState({ location: loc.body });
-    this.props.sendLoc(this.state.location);
+    this.props.sendLoc(loc.body);
   };
+  is;
 
   render() {
     return (
