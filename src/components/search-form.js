@@ -4,7 +4,6 @@ import superagent from 'superagent';
 class SearchForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       searchQuery: 'I am Groot.'
     };
@@ -19,7 +18,6 @@ class SearchForm extends React.Component {
     let loc = await superagent.get(url);
     this.props.sendLoc(loc.body);
   };
-  is;
 
   render() {
     return (
