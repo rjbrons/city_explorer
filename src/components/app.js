@@ -10,12 +10,24 @@ class App extends React.Component {
 
     this.state = {
       searchQuery: 'placeholder',
-      locationData: {}
+      locationData: {},
+      mapURL:
+        'https://maps.googleapis.com/maps/api/staticmap?center=47.606210%2c%20-122.332071&zoom=13&size=600x300&maptype=roadmap%20%20&key=AIzaSyBfOxvSAEhF0bINfqhSTthhNKEBb8eHfHc'
     };
   }
 
-  updateLocationData = newLoc => {
-    this.setState({ locationData: newLoc });
+  updateMapData = loc => {
+    this.setState({
+      mapURL: `https://maps.googleapis.com/maps/api/staticmap?center=${
+        loc.latitude
+      }%2c%20${loc.longitude}&zoom=13&size=600x300&maptype=roadmap
+    &key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
+    });
+  };
+
+  updateLocationData = async newLoc => {
+    await this.setState({ locationData: newLoc });
+    this.updateMapData(newLoc);
   };
 
   render() {
@@ -23,8 +35,8 @@ class App extends React.Component {
       <>
         <Header />
         <SearchForm sendLoc={this.updateLocationData} />
-        <Map loc={this.state.locationData} />
-        <SearchResults />
+        <Map mapURL={this.state.mapURL} />
+        <SearchResults locData={this.state.locationData} />
       </>
     );
   }

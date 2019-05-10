@@ -14,6 +14,16 @@ Estimate of time needed to complete: 4 hours
 
 Start time: 8:15
 
+Finish time: N/A.
+
+Actual time needed to complete: I worked on it until 12pm.. its still not done.
+
+Number and name of feature: City Explorer part 3 - SASS/SCSS
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 9:30
+
 Finish time: .
 
 Actual time needed to complete:
